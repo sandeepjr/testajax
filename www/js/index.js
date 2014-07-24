@@ -48,7 +48,13 @@ var app = {
     }
 };
 
+function befooreajx() {
+    $.support.cors=true;
+    $.mobile.allowCrossDomainPages=true;
+}
+
 function goAjax() {
+    befooreajx();
     var url = "https://getVesselTracker.com/seafarer_dev/get_sf_emp_details.php?empid=141600";
     $.ajax({
         url: url,
@@ -71,7 +77,29 @@ function goAjax() {
 }
 
 function goText() {
+    befooreajx();
     var url = "https://getVesselTracker.com/testajax.txt";
+    $.ajax({
+        url: url,
+        datatype: 'text',
+        beforeSend: function() {
+        },
+
+        success : function(data) {
+            alert(data)
+        },
+
+        error: function (request, status, error) {
+            alert("request:"+request);
+            alert("status:"+status);
+            alert("error:"+error);
+        }
+    });
+}
+
+function goGoogle() {
+    befooreajx();
+    var url = "https://www.google.co.in/";
     $.ajax({
         url: url,
         datatype: 'text',
