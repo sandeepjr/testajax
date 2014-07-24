@@ -50,7 +50,7 @@ var app = {
 
 function befooreajx() {
     $.support.cors=true;
-    $.mobile.allowCrossDomainPages=true;
+    //$.mobile.allowCrossDomainPages=true;
 }
 
 function goAjax() {
