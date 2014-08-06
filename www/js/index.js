@@ -55,7 +55,7 @@ function befooreajx() {
 
 function goAjax() {
     befooreajx();
-    var url = "https://getVesselTracker.com/seafarer_dev/get_sf_emp_details.php?empid=141600";
+    var url = "https://getVesselTracker.com/seafarer_dev/get_sf_plan_details.php?empid=622980";
     $.ajax({
         url: url,
         datatype: 'text',
@@ -64,7 +64,7 @@ function goAjax() {
 
         success : function(data) {
             if(data[0] != null) {
-                alert(data[0]['sur_name']);
+                alert(data[0]['vessel_type']);
             }
         },
 
