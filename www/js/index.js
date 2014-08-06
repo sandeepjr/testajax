@@ -49,7 +49,9 @@ var app = {
 };
 
 function befooreajx() {
+    alert('b4 1');
     $.support.cors=true;
+    alert('b4 2');
     //$.mobile.allowCrossDomainPages=true;
 }
 
@@ -98,24 +100,29 @@ function goText() {
 }
 
 function goGoogle() {
+    alert('call');
     befooreajx();
     var url = "https://www.google.co.in/";
     $.ajax({
         url: url,
         datatype: 'text',
         beforeSend: function() {
+            alert('b4 s');
         },
 
         success : function(data) {
+            alert('succ');
             alert(data);
         },
 
         error: function (request, status, error) {
+            alert('err');
             alert("request:"+request);
             alert("status:"+status);
             alert("error:"+error);
         }
     });
+    alert('end');
 }
 
 window.onerror = function(msg, url, linenumber) {
